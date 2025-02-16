@@ -8,7 +8,7 @@ const FileDisplay = (props) => {
             Uploaded<span className='text-blue-400 bold'>File</span></h1>
         <div className="mx-auto flex flex-col text-left my-4">
             <h3 className='font-semibold'>Name: </h3>
-            <p>{file.name}</p>
+            <p>{file ? file.name : 'Custom audio'}</p>
         </div>
         <div className="flex items-center justify-between gap-4">
           <button onClick={handleAudio} className='text-blue-400 addBtn p-2 rounded-lg cursor-pointer'>
