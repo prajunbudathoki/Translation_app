@@ -10,10 +10,10 @@ const Transcribe = (props) => {
           </h1>
           <p>{!downloading ? 'loading....🫸' : 'Engaged complete 👍'}</p>
         </div>
-        <div className="flex flex-col gap-2 sm:gap-4 max-w-[500px] mx-auto w-full">
+        <div className="flex flex-col gap-2 sm:gap-4 max-w-[400px] mx-auto w-full">
           {[0,1,2].map(val => {
             return(
-              <div key={val} className={'rounded-lg h-2 sm:h-3 bg-slate-300 loading' + `loading ${val}`}></div>
+              <div key={val} className={`rounded-lg h-2 sm:h-3 bg-slate-300 loading loading${val}`}></div>
             )
           })}
         </div>

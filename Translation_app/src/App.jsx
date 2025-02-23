@@ -5,10 +5,11 @@ import FileDisplay from './components/FileDisplay';
 import Information from './components/Information';
 import Transcribe from './components/Transcribe';
 
+
 const App = () => {
   const [file, setFile] = useState(null)
   const [audioStream,setAudioStream] = useState(null)
-  const [output,setOutput] = useState(null)
+  const [output,setOutput] = useState(true)
   const [loading,setLoading] = useState(true)
 
   const isAudioAvailable = file || audioStream
@@ -42,7 +43,6 @@ const App = () => {
       </section>
       <h1 className='text-green-400'>App</h1>
       <footer>
-
       </footer>
     </div>
   )
