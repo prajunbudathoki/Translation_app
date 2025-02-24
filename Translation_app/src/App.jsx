@@ -9,8 +9,9 @@ import Transcribe from './components/Transcribe';
 const App = () => {
   const [file, setFile] = useState(null)
   const [audioStream,setAudioStream] = useState(null)
-  const [output,setOutput] = useState(true)
-  const [loading,setLoading] = useState(true)
+  const [output,setOutput] = useState(null)
+  const [loading,setLoading] = useState(false)
+  const [finished,setFinished] = useState(false)
 
   const isAudioAvailable = file || audioStream
 
@@ -19,9 +20,19 @@ const App = () => {
     setAudioStream(null)
   }
 
+  const worker = useRef(null)
+
   useEffect(() => {
-    console.log(audioStream)
-  },[audioStream])
+    if(!worker.current){
+      worker.current = new Worker(new URL('./utils/whisper.worker.js',import.meta.url),{
+        type:'module'
+      })
+    }
+    const onMessageReceived = async (e) => {
+      
+    }
+  },[])
+
 
     return (
     <div className='flex flex-col max-w-[1000px] mx-auto w-full'>
